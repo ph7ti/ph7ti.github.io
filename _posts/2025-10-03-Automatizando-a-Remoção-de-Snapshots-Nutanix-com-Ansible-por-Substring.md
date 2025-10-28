@@ -26,9 +26,9 @@ Remover snapshots de VMs Nutanix que contenham uma determinada substring no nome
   - name: Remove old Snapshots
     shell: |
       #! /bin/bash
-      keyword='{{ string_snapshot }}'
-      outputfile='{{ output_file }}'
-      debug='{{ dry_run }}'
+      keyword='{\{ string_snapshot }\}'
+      outputfile='{\{ output_file }\}'
+      debug='{\{ dry_run }\}'
       echo "" > $outputfile
       get_list=$(/usr/local/nutanix/bin/acli snapshot.list | sed 's/ \+ /;/g' | sed 's/ /_/g' | grep "$keyword")
       for item in $get_list ; do
@@ -47,25 +47,25 @@ Remover snapshots de VMs Nutanix que contenham uma determinada substring no nome
 
   - name: Debug - Output Snapshot run - Show errors
     debug:
-      msg: "{{ output_script.stdout_lines }}"
+      msg: "{\{ output_script.stdout_lines }\}"
     when: string_snapshot is defined and string_snapshot | length > 0 and output_script.stdout_lines | length > 0
 
 # Tasks abaixo servem apenas para debug ou registro para evidência, coletando o log gerado no servidor Nutanix
   - name: Collected data
-    shell: cat '{{ output_file }}'
+    shell: cat '{\{ output_file }\}'
     register: o_file
     tags: debug
     when: string_snapshot is defined and string_snapshot | length > 0
 
   - name: Output script run
     debug:
-      msg: "{{ o_file.stdout_lines }}"
+      msg: "{\{ o_file.stdout_lines }\}"
     tags: debug, output
     when: string_snapshot is defined and string_snapshot | length > 0
 
   - name: Delete old file
     file:
-      dest: "{{ output_local_file }}"
+      dest: "{\{ output_local_file }\}"
       state: absent
     delegate_to: localhost
     run_once: true
@@ -73,7 +73,7 @@ Remover snapshots de VMs Nutanix que contenham uma determinada substring no nome
 
   - name: Create file
     file:
-      dest: "{{ output_local_file }}"
+      dest: "{\{ output_local_file }\}"
       state: touch
     delegate_to: localhost
     run_once: true
@@ -81,8 +81,8 @@ Remover snapshots de VMs Nutanix que contenham uma determinada substring no nome
 
   - name: Build out LOG file
     lineinfile:
-      path: "{{ output_local_file }}"
-      line: "{{ o_file.stdout }}"
+      path: "{\{ output_local_file }\}"
+      line: "{\{ o_file.stdout }\}"
       create: true
       state: present
     delegate_to: localhost

@@ -23,7 +23,7 @@ Listar todos os snapshots presentes no cluster Nutanix e exibir suas informaçõ
 
   - name: Output - Get all Snapshots
     debug:
-      msg: "{{ output_list.stdout_lines }}"
+      msg: "{\{ output_list.stdout_lines }\}"
 ```
 
 ### Explicação Passo a Passo
@@ -62,7 +62,7 @@ Este playbook será executado em todos os hosts definidos no inventário (`hosts
 ```yaml
 - name: Output - Get all Snapshots
   debug:
-    msg: "{{ output_list.stdout_lines }}"
+    msg: "{\{ output_list.stdout_lines }\}"
 ```
 
 Este passo utiliza o módulo `debug` para exibir as linhas de saída do comando anterior, mostrando os snapshots diretamente no terminal ou no log da execução do playbook.

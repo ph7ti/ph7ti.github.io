@@ -29,7 +29,7 @@ Permitir o aumento de vCPUs em uma VM Nutanix de forma automatizada, utilizando:
 #- Coletar Hostname da VM se "target" for endereço IP
   - name: Get VM Name
     shell: |
-      host_ip="{{ target }}"
+      host_ip="{\{ target }\}"
       if [ $(echo $host_ip | grep -Eo '^(([1-9]?[0-9]|1[0-9][0-9]|2([0-4][0-9]|5[0-5]))\.){3}([1-9]?[0-9]|1[0-9][0-9]|2([0-4][0-9]|5[0-5]))$') != 1 ] ; then
         get_vms=$(/usr/local/nutanix/bin/acli vm.list | tail -n +2 | awk -F ' ' '{print $1"\n"}' | grep -v 'NTNX\|ntnx' | sed 's/$/\n/g')   # Obs.: Filtro do "grep" para desconsiderar as VMs de gerenciamento do cluster, customize se precisar acrescentar outras VMs
         for vm in $get_vms ; do
@@ -48,24 +48,24 @@ Permitir o aumento de vCPUs em uma VM Nutanix de forma automatizada, utilizando:
 
   - name: Register variable - Host - If initial param is "IP"
     set_fact:
-        string_vm: "{{ output_vm_name.stdout | from_yaml }}"
+        string_vm: "{\{ output_vm_name.stdout | from_yaml }\}"
     when: target|regex_search('^\\d{1,3}(\\.\\d{1,3}){3}$')
 
   - name: Register variable - VM - If initial param is not "IP"
     set_fact:
-        string_vm: "{{ target }}"
+        string_vm: "{\{ target }\}"
     when: target|regex_search('^[a-zA-Z]+.*')
 
   - debug:
-      msg: '{{ string_vm }}'
+      msg: '{\{ string_vm }\}'
     when: target|regex_search('^[a-zA-Z]+.*')
 
 #- expandir cpu do host
   - name: Upgrade vCPUs units
     shell: |
       #!/bin/bash
-      vm_to_up='{{ string_vm }}'
-      vcpu_raise_more='{{ int_vcpu }}'
+      vm_to_up='{\{ string_vm }\}'
+      vcpu_raise_more='{\{ int_vcpu }\}'
       output=$(/usr/local/nutanix/bin/acli vm.get $vm_to_up | grep '_vcpu')
       cores=$(echo $output | awk -F ' ' '{print $2}' | sed 's/ //')
       vcpu=$(echo $output | awk -F ' ' '{print $4}' | sed 's/ //')
@@ -87,7 +87,7 @@ Permitir o aumento de vCPUs em uma VM Nutanix de forma automatizada, utilizando:
 #- Output da execução do script
   - name: Output run
     debug:
-      msg: "{{ output_script.stdout_lines }}"
+      msg: "{\{ output_script.stdout_lines }\}"
 
 ```
 

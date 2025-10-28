@@ -20,7 +20,7 @@ Criar snapshots de máquinas virtuais (VMs) em um ambiente Nutanix, utilizando A
 
   - name: Get VM Name
     shell: |
-      host_ip="{{ target }}"
+      host_ip="{\{ target }\}"
       if [ $(echo $host_ip | grep -Eo '^(([1-9]?[0-9]|1[0-9][0-9]|2([0-4][0-9]|5[0-5]))\.){3}([1-9]?[0-9]|1[0-9][0-9]|2([0-4][0-9]|5[0-5]))$') != 1 ] ; then
         get_vms=$(/usr/local/nutanix/bin/acli vm.list | tail -n +2 | awk -F ' ' '{print $1"\n"}' | grep -v 'NTNX\|ntnx' | sed 's/$/\n/g')
         for vm in $get_vms ; do
@@ -37,29 +37,29 @@ Criar snapshots de máquinas virtuais (VMs) em um ambiente Nutanix, utilizando A
 
   - name: Register variable - Host - If initial param is "IP"
     set_fact:
-        string_vm: "{{ output_vm_name.stdout | from_yaml }}"
+        string_vm: "{\{ output_vm_name.stdout | from_yaml }\}"
     when: target|regex_search('^\\d{1,3}(\\.\\d{1,3}){3}$')
 
   - name: Register variable - VM - If initial param is not "IP"
     set_fact:
-        string_vm: "{{ target }}"
+        string_vm: "{\{ target }\}"
     when: target|regex_search('^[a-zA-Z]+.*$')
 
   - debug:
-      msg: '{{ string_vm }}'
+      msg: '{\{ string_vm }\}'
     when: target|regex_search('^[a-zA-Z]+.*$')
 
   - name: Run Snapshot
     shell: |
-      snapshot_name='{{ string_snapshot }}'
-      echo "/usr/local/nutanix/bin/acli vm.snapshot_create '{{ string_vm }}' snapshot_name_list='$snapshot_name'"
-      /usr/local/nutanix/bin/acli vm.snapshot_create '{{ string_vm }}' snapshot_name_list='"'$snapshot_name'"'
-      /usr/local/nutanix/bin/acli vm.snapshot_list '{{ string_vm }}'
+      snapshot_name='{\{ string_snapshot }\}'
+      echo "/usr/local/nutanix/bin/acli vm.snapshot_create '{\{ string_vm }\}' snapshot_name_list='$snapshot_name'"
+      /usr/local/nutanix/bin/acli vm.snapshot_create '{\{ string_vm }\}' snapshot_name_list='"'$snapshot_name'"'
+      /usr/local/nutanix/bin/acli vm.snapshot_list '{\{ string_vm }\}'
     register: output_script
 
   - name: Output Snapshot run
     debug:
-      msg: "{{ output_script.stdout_lines }}"
+      msg: "{\{ output_script.stdout_lines }\}"
 ```
 
 ***
@@ -96,13 +96,13 @@ Dependendo do tipo de entrada (`IP` ou `nome`), o playbook registra a variável 
 #### 4. **Task "Run Snapshot":Criação do Snapshot e Validação**
 
 ```yaml
-/usr/local/nutanix/bin/acli vm.snapshot_create '{{ string_vm }}' snapshot_name_list='"'$snapshot_name'"'
+/usr/local/nutanix/bin/acli vm.snapshot_create '{\{ string_vm }\}' snapshot_name_list='"'$snapshot_name'"'
 ```
 
 Este comando cria o snapshot da VM identificada, com o nome definido em `string_snapshot`.
 
 ```yaml
-/usr/local/nutanix/bin/acli vm.snapshot_list '{{ string_vm }}'
+/usr/local/nutanix/bin/acli vm.snapshot_list '{\{ string_vm }\}'
 ```
 Após a criação, o playbook lista os snapshots da VM para confirmar a execução.
 
