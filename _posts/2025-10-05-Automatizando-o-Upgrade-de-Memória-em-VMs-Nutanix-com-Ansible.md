@@ -41,23 +41,23 @@ O playbook tem como objetivo identificar uma VM (por nome ou IP) e aumentar sua 
 
   - name: Register variable - Host - If initial param is "IP"
     set_fact:
-        string_vm: "{{ output_vm_name.stdout | from_yaml }}"
+        string_vm: "{\{ output_vm_name.stdout | from_yaml }\}"
     when: target|regex_search('^\\d{1,3}(\\.\\d{1,3}){3}$')
 
   - name: Register variable - VM
     set_fact:
-        string_vm: "{\{ target \}}"
+        string_vm: "{\{ target }\}"
     when: target|regex_search('^[a-zA-Z]+.*')
 
   - debug:
-      msg: '{{ string_vm }}'
+      msg: '{\{ string_vm }\}'
     when: target|regex_search('^[a-zA-Z]+.*')
 
 #- expandir memory do host
   - name: Run Scrip - UP MEMORY 10% Truncate
     shell: |
       #!/bin/bash
-      vm_to_up='{{ string_vm }}'
+      vm_to_up='{\{ string_vm }\}'
       memory=$(/usr/local/nutanix/bin/acli vm.get $vm_to_up | grep 'memory_mb' -m 1 | awk '{print $2}')
       memory_GB=$(awk "BEGIN {printf \"%.0f \", $memory/1024}")
       echo "Total de Memória (GB) atual:" $memory_GB
@@ -76,7 +76,7 @@ O playbook tem como objetivo identificar uma VM (por nome ou IP) e aumentar sua 
 #- Output da execução do script
   - name: Output run
     debug:
-      msg: "{{ output_script.stdout_lines }}"
+      msg: "{\{ output_script.stdout_lines }\}"
 
 ```
 
@@ -111,12 +111,12 @@ Se o `target` for um IP, o script busca entre as VMs do cluster aquela que possu
 ```yaml
   - name: Register variable - Host - If initial param is "IP"
     set_fact:
-        string_vm: "{{ output_vm_name.stdout | from_yaml }}"
+        string_vm: "{\{ output_vm_name.stdout | from_yaml }\}"
     when: target|regex_search('^\\d{1,3}(\\.\\d{1,3}){3}$')
 
   - name: Register variable - VM
     set_fact:
-        string_vm: "{{ target }}"
+        string_vm: "{\{ target }\}"
     when: target|regex_search('^[a-zA-Z]+.*')
 ```
 
@@ -129,7 +129,7 @@ Dependendo se o `target` é um IP ou um nome, o playbook define a variável `str
 
 ```yaml
   - debug:
-      msg: '{{ string_vm }}'
+      msg: '{\{ string_vm }\}'
     when: target|regex_search('^[a-zA-Z]+.*')
 ```
 
@@ -144,7 +144,7 @@ Exibe o nome da VM para fins de verificação, caso o `target` seja um nome.
   - name: Run Scrip - UP MEMORY 10% Truncate
     shell: |
       #!/bin/bash
-      vm_to_up='{{ string_vm }}'
+      vm_to_up='{\{ string_vm }\}'
       memory=$(/usr/local/nutanix/bin/acli vm.get $vm_to_up | grep 'memory_mb' -m 1 | awk '{print $2}')
       memory_GB=$(awk "BEGIN {printf \"%.0f \", $memory/1024}")
       echo "Total de Memória (GB) atual:" $memory_GB
@@ -171,7 +171,7 @@ Este script coleta a memória atual da VM, calcula o novo valor (10% a mais ou +
 ```yaml
   - name: Output run
     debug:
-      msg: "{{ output_script.stdout_lines }}"
+      msg: "{\{ output_script.stdout_lines }\}"
 ```
 
 **Explicação:**  
