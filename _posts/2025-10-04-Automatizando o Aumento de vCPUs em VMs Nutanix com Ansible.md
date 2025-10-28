@@ -174,3 +174,7 @@ Mostra no terminal a saída do script de upgrade, incluindo:
 *   **Escalabilidade**: Pode ser adaptado para múltiplas VMs ou integrado a pipelines de CI/CD.
 
 ***
+
+### ✅ Conclusão
+
+Esse playbook é uma excelente base para automatizar a expansão automática de CPU nas VMs em ambientes Nutanix. Ele pode ser utilizado em conjunto com ambientes de monitoramento (Zabbix por exemplo) para expandir automaticamente recursos caso ocorra seu esgotamento.
