@@ -9,7 +9,7 @@ Listar todos os snapshots presentes no cluster Nutanix e exibir suas informaçõ
 ### Código Ansible
 
 ```yaml
-- name: Delete Snapshots
+- name: List Snapshots
   hosts: all
 
   tasks:
@@ -31,11 +31,11 @@ Listar todos os snapshots presentes no cluster Nutanix e exibir suas informaçõ
 #### 1. **Definição do Playbook**
 
 ```yaml
-- name: Delete Snapshots
+- name: List Snapshots
   hosts: all
 ```
 
-Este playbook será executado em todos os hosts definidos no inventário (`hosts: all`). Apesar do nome sugerir "Delete Snapshots", o script apenas lista os snapshots — o nome pode ser ajustado para refletir melhor a funcionalidade.
+Este playbook será executado em todos os hosts definidos no inventário (`hosts: all`).
 
 ***
 
