@@ -17,12 +17,12 @@ Permitir o aumento de vCPUs em uma VM Nutanix de forma automatizada, utilizando:
 ### 📄 Código do Playbook
 
 ```yaml
-- name: vCPU raise more
+- name: Upgrade vCPU
   hosts: all
   vars:
-    string_vm: ''
+    string_vm: ''   # Nome da VM resolvido
     int_vcpu: ''    # Quantidade de núcleos que deseja adicionar, se o campo estiver vazio vai adicionar 10%
-    target: ''		# Alvo pode ser o IP ou Nome da VM (não confundir com hostname do sistema)
+    target: ''		  # Alvo pode ser o IP ou Nome da VM (não confundir com hostname do sistema)
 
   tasks:
 

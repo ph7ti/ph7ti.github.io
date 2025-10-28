@@ -17,9 +17,9 @@ Remover snapshots de VMs Nutanix que contenham uma determinada substring no nome
   hosts: all
   vars:
     dry_run: 'false'
-    output_local_file: './Snapshots_removidos.log'
-    output_file: '/home/nutanix/Snapshots_removidos.log'
-    string_snapshot: ''
+    output_local_file: './Snapshots_removidos.log'          # Log local no servidor Ansible
+    output_file: '/home/nutanix/Snapshots_removidos.log'    # Log no servidor Nutanix
+    string_snapshot: ''                                     # Nome da VM resolvido
 
   tasks:
 

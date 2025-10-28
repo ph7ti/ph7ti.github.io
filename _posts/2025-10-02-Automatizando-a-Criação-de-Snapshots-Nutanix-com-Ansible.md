@@ -12,9 +12,9 @@ Criar snapshots de máquinas virtuais (VMs) em um ambiente Nutanix, utilizando A
 - name: Create Snapshots
   hosts: all
   vars:
-    target: ''
-    string_vm: ''
-    string_snapshot: ''
+    target: ''          # Alvo pode ser o IP ou Nome da VM (não confundir com hostname do sistema)
+    string_vm: ''       # Nome da VM resolvido
+    string_snapshot: '' # Nome do snapshot a ser criado
     
   tasks:
 
