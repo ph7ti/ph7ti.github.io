@@ -46,7 +46,7 @@ O playbook tem como objetivo identificar uma VM (por nome ou IP) e aumentar sua 
 
   - name: Register variable - VM
     set_fact:
-        string_vm: "{{ target }}"
+        string_vm: "{\{ target \}}"
     when: target|regex_search('^[a-zA-Z]+.*')
 
   - debug:
