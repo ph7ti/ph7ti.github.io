@@ -1,5 +1,2 @@
-Here you can say lots of fun things about your site.
-
-Maybe say a some things about yourself.
-
-Or maybe what you plan to blog about.
+Bem-vindo ao meu blog sobre Infraestrutura, Automação, Cloud e Segurança da Informação!
+Aqui compartilho experiências, tutoriais e insights sobre tecnologias que uso no dia a dia.
