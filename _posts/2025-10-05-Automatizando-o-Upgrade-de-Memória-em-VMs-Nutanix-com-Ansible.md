@@ -22,7 +22,7 @@ O playbook tem como objetivo identificar uma VM (por nome ou IP) e aumentar sua 
 #Coletar Hostname da VM
   - name: Get VM Name
     shell: |
-      host_ip="{{ target }}"
+      host_ip="\{{ target \}}"
       if [ $(echo $host_ip | grep -Eo '^(([1-9]?[0-9]|1[0-9][0-9]|2([0-4][0-9]|5[0-5]))\.){3}([1-9]?[0-9]|1[0-9][0-9]|2([0-4][0-9]|5[0-5]))$') != 1 ] ; then
         get_vms=$(/usr/local/nutanix/bin/acli vm.list | tail -n +2 | awk -F ' ' '{print $1"\n"}' | grep -v 'NTNX\|ntnx' | sed 's/$/\n/g')   # Obs.: Filtro do "grep" para desconsiderar as VMs de gerenciamento do cluster, customize se precisar acrescentar outras VMs
         for vm in $get_vms ; do
