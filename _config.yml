@@ -1,6 +1,6 @@
 title: "PH7TI"
 author: "Raphael Matheus Pereira"
-description: "Infraestrutura, Automação, Cloud e Segurança da Informação." # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
+description: "Sou apaixonado por construir ambientes de TI robustos, escaláveis e seguros. Com experiência em Automação e Segurança da Informação." # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
 
 # Email / Social media user names used by the minima theme:
 # All of these are optional and can be removed or commented out
@@ -20,7 +20,7 @@ linkedin_username: "raphaelmpereira"
 #########################################################################################
 theme: "minima"
 
-rss: rss
+#rss: rss
 
 kramdown:
   syntax_highlighter_opts:
