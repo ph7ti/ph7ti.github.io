@@ -1,5 +1,7 @@
 # Linux: Coletando Informações do SO com Ansible e Gerando Relatório CSV
 
+Imagine a seguinte situação: Você precisa fazer um assessment rápido de ambiente sem monitoramento ou qualquer software de asset management... E se eu mostrar que dá pra fazer isso apenas com  ~~um canivete suiço~~ o ansible?
+
 Neste post, vamos explorar um playbook Ansible simples e eficiente que coleta informações do sistema operacional de máquinas Linux e gera um relatório em formato CSV. Esse tipo de automação é útil para administradores que precisam manter inventários atualizados de seus servidores em grandes ambientes.
 
 ## Objetivo do Playbook
