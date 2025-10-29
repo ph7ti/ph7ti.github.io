@@ -23,8 +23,8 @@ O playbook tem como objetivo coletar dados como IP, sistema operacional, versão
 
   - name: Save CSV headers
     ansible.builtin.lineinfile:
-      dest: "{{ csv_path }}/{{ csv_filename }}"
-      line: "{{ headers }}"
+      dest: "{\{ csv_path }\}/{\{ csv_filename }\}"
+      line: "{\{ headers }\}"
       create: true
       state: present
     delegate_to: localhost
@@ -32,8 +32,8 @@ O playbook tem como objetivo coletar dados como IP, sistema operacional, versão
 
   - name: Build out CSV file by facts
     ansible.builtin.lineinfile:
-      dest: "{{ csv_path }}/{{ csv_filename }}"
-      line: "{{ inventory_hostname }};{{ ansible_distribution }};{{ ansible_distribution_version }};{{ ansible_fqdn }};{{ ansible_kernel }}"
+      dest: "{\{ csv_path }\}/{\{ csv_filename }\}"
+      line: "{\{ inventory_hostname }\};{\{ ansible_distribution }\};{\{ ansible_distribution_version }\};{\{ ansible_fqdn }\};{\{ ansible_kernel }\}"
       create: true
       state: present
     delegate_to: localhost
@@ -41,7 +41,7 @@ O playbook tem como objetivo coletar dados como IP, sistema operacional, versão
 
   - name: Read in CSV to variable
     read_csv:
-      path: "{{ csv_path }}/{{ csv_filename }}"
+      path: "{\{ csv_path }\}/{\{ csv_filename }\}"
     register: csv_file
     delegate_to: localhost
     run_once: true
