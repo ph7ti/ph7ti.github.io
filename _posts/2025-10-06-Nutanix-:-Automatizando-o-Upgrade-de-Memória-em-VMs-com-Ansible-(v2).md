@@ -1,4 +1,4 @@
-# Automatizando o Aumento de Memória em VMs Nutanix com Ansible (v2)
+# Nutanix: Automatizando o Aumento de Memória em VMs com Ansible (v2)
 
 A gestão de recursos em ambientes virtualizados pode ser desafiadora, especialmente quando há necessidade de escalar rapidamente a capacidade de uma VM. Este playbook Ansible foi criado para facilitar o processo de **aumento de memória** em VMs Nutanix, de forma segura, automatizada e parametrizável.
 

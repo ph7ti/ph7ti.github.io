@@ -1,4 +1,4 @@
-## Automatizando a Remoção de Snapshots Nutanix com Ansible por Substring
+## Nutanix: Automatizando a Remoção de Snapshots com Ansible por Substring
 
 Snapshots são recursos valiosos para proteção e recuperação de dados, mas podem consumir espaço significativo se não forem gerenciados adequadamente. Neste artigo, vamos explorar um **playbook Ansible** que automatiza a **remoção de snapshots** em um ambiente **Nutanix**, com base em uma substring no nome do snapshot.
 

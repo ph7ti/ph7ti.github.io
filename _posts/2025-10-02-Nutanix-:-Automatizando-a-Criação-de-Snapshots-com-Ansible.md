@@ -1,4 +1,4 @@
-## Automatizando a Criação de Snapshots Nutanix com Ansible
+## Nutanix: Automatizando a Criação de Snapshots com Ansible
 
 A automação de tarefas rotineiras é essencial para garantir agilidade e consistência na administração de ambientes de infraestrutura. Neste artigo, vamos explorar um **playbook Ansible** que realiza a **criação de snapshots de VMs** em um cluster **Nutanix**, utilizando a CLI `acli`.
 

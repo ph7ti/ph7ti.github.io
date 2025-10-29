@@ -1,4 +1,4 @@
-## Automatizando a Listagem de Snapshots Nutanix com Ansible
+## Nutanix: Automatizando a Listagem de Snapshots com Ansible
 
 Neste post, vamos explorar um exemplo prático de automação com **Ansible** para listar snapshots em um ambiente **Nutanix**. O script abaixo utiliza o módulo `shell` para executar comandos diretamente no terminal do host alvo, e exibe os snapshots existentes no cluster Nutanix.
 
