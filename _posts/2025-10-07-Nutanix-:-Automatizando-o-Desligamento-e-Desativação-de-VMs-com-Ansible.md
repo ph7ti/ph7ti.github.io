@@ -1,6 +1,8 @@
 ## Nutanix: Automatizando o Desligamento e Desativação de VMs com Ansible
 
-Em ambientes corporativos, é comum a necessidade de desativar máquinas virtuais (VMs) por motivos como encerramento de projetos, economia de recursos ou reestruturações. Este playbook Ansible foi desenvolvido para **automatizar o processo de desligamento e desativação de VMs** no Nutanix, garantindo rastreabilidade e padronização.
+Em ambientes corporativos, é comum a necessidade de desativar máquinas virtuais (VMs) por motivos como encerramento de projetos, economia de recursos, reestruturações ou manutenção planejada.
+
+Este playbook Ansible foi desenvolvido para **automatizar o processo de desligamento e desativação de VMs** no Nutanix, garantindo rastreabilidade e padronização.
 
 ***
 
@@ -11,6 +13,8 @@ Desligar uma VM de forma segura e registrar sua desativação por meio de uma an
 ***
 
 ### 📜 Estrutura do Playbook
+
+> Obs.: Remover o "\\" do YAML entre os cochetes ({\\{ e }\\}). O Markdown não aceita "{{" e "}}"
 
 ```yaml
 - name: Guest Shutdown and Disable VM

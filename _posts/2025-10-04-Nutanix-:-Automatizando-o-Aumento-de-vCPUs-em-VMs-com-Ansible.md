@@ -1,6 +1,8 @@
 ## Nutanix: Automatizando o Aumento de vCPUs em VMs com Ansible
 
-A escalabilidade de recursos em máquinas virtuais é uma tarefa comum na administração de ambientes virtualizados. Neste artigo, vamos explorar um **playbook Ansible** que automatiza o processo de **acréscimo de núcleos de CPU (vCPUs)** em uma VM Nutanix, com base em parâmetros definidos pelo usuário.
+A gestão de recursos em ambientes virtualizados pode ser desafiadora, especialmente quando há necessidade de escalar rapidamente a capacidade de uma VM. Em ambientes críticos, se um (ou vários) sistema(s) para(m) por falta de recursos em horário de pico podemos lembrar da expressão popular: "barata-voa". Logo a possibilidade de automação de expansão vertical de recursos pode salvar sua pele.
+
+Neste artigo, vamos explorar um **playbook Ansible** que automatiza o processo de **acréscimo de núcleos de CPU (vCPUs)** em uma VM Nutanix, com base em parâmetros definidos pelo usuário.
 
 ***
 
