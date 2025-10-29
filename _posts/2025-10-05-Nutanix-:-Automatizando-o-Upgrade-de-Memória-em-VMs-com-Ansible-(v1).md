@@ -1,4 +1,4 @@
-## Nutanix: Automatizando o Upgrade de Memória em VMs com Ansible
+## Nutanix: Automatizando o Upgrade de Memória em VMs com Ansible (v1)
 
 Neste post, vamos explorar um playbook Ansible que automatiza o processo de aumento de memória em uma máquina virtual (VM) no ambiente Nutanix. Essa automação é especialmente útil para times de infraestrutura que buscam agilidade e padronização nas operações do dia a dia.
 
