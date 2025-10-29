@@ -4,11 +4,11 @@ Imagine a seguinte situação: Você precisa fazer um assessment rápido de ambi
 
 Neste post, vamos explorar um playbook Ansible simples e eficiente que coleta informações do sistema operacional de máquinas Linux e gera um relatório em formato CSV. Esse tipo de automação é útil para administradores que precisam manter inventários atualizados de seus servidores em grandes ambientes.
 
-## Objetivo do Playbook
+## 🎯 Objetivo
 
 O playbook tem como objetivo coletar dados como IP, sistema operacional, versão da distribuição, hostname e versão do kernel de cada máquina gerenciada e salvar essas informações em um arquivo CSV.
 
-## Estrutura do Playbook
+## 📜 Estrutura do Playbook
 
 > Obs.: Remover o "\\" do YAML entre os cochetes {\\{ e }\\} das variáveis.
 

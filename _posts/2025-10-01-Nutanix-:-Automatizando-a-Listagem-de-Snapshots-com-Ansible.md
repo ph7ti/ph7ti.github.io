@@ -4,11 +4,11 @@ A praticidade de executar um snapshot no ambiente Nutanix pode as vezes nos deix
 
 Neste post, vamos explorar um exemplo prático de automação com **Ansible** para listar snapshots em um ambiente **Nutanix**. O script abaixo utiliza o módulo `shell` para executar comandos diretamente no terminal do host alvo, e exibe os snapshots existentes no cluster Nutanix.
 
-### Objetivo
+### 🎯 Objetivo
 
 Listar todos os snapshots presentes no cluster Nutanix e exibir suas informações de forma organizada.
 
-### Código Ansible
+### 📜 Código do Playbook
 
 > Obs.: Remover o "\\" do YAML entre os cochetes {\\{ e }\\} das variáveis.
 

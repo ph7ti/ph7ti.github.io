@@ -6,7 +6,7 @@ Neste post, vamos explorar um script que coleta informações valiosas dos usuá
 
 ***
 
-## Código 
+## 📜 Código Completo
 
 ```powershell
 $DateStr = (Get-Date).ToString("dd_MM_yyyy")

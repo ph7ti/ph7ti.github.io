@@ -10,7 +10,7 @@ Neste post, vamos mostrar como gerar um relatório completo com os grupos de um 
 
 ***
 
-## O Código Completo
+## 📜 Código Completo
 
 ```powershell
 Write-Host "Escolha o tipo de grupo:"

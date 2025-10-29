@@ -6,7 +6,7 @@ Neste post, vamos mostrar como criar um relatório com os usuários ativos de um
 
 ***
 
-## Código 
+## 📜 Código Completo
 
 ```powershell
 $groupname = Read-Host "Grupo:"

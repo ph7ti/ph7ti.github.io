@@ -12,7 +12,7 @@ Remover snapshots de VMs Nutanix que contenham uma determinada substring no nome
 
 ***
 
-### 📄 Código do Playbook
+### 📜 Código do Playbook
 
 > Obs.: Remover o "\\" do YAML entre os cochetes {\\{ e }\\} das variáveis.
 

@@ -4,11 +4,11 @@ A automação de tarefas rotineiras é essencial para garantir agilidade e consi
 
 Neste artigo, vamos explorar um **playbook Ansible** que realiza a **criação de snapshots de VMs** em um cluster **Nutanix**, utilizando a CLI `acli`.
 
-### Objetivo
+### 🎯 Objetivo
 
 Criar snapshots de máquinas virtuais (VMs) em um ambiente Nutanix, utilizando Ansible para identificar a VM (por nome ou IP) e executar o comando de snapshot.
 
-### Estrutura do Playbook
+### 📜 Código do Playbook
 
 > Obs.: Remover o "\\" do YAML entre os cochetes {\\{ e }\\} das variáveis.
 

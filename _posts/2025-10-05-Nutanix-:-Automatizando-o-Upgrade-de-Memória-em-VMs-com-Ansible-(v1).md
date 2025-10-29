@@ -4,13 +4,13 @@ A gestão de recursos em ambientes virtualizados pode ser desafiadora, especialm
 
 Neste post, vamos explorar um playbook Ansible que automatiza o processo de aumento de memória em uma máquina virtual (VM) no ambiente Nutanix. Essa automação é especialmente útil para times de infraestrutura que buscam agilidade e padronização nas operações do dia a dia.
 
-### Objetivo
+### 🎯 Objetivo
 
 O playbook tem como objetivo identificar uma VM (por nome ou IP) e aumentar sua memória em 10%, utilizando comandos da ferramenta `acli` do Nutanix.
 
 ***
 
-### Estrutura do Playbook
+### 📜 Código do Playbook
 
 > Obs.: Remover o "\\" do YAML entre os cochetes {\\{ e }\\} das variáveis.
 

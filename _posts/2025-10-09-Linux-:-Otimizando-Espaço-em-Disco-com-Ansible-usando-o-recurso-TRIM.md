@@ -4,7 +4,7 @@ Manter o desempenho e a saúde dos discos em ambientes Linux é essencial, espec
 
 Neste post, vamos explorar um playbook Ansible que automatiza essa tarefa, verificando o status do disco e executando o TRIM de forma segura e te poupando um bom tempo.
 
-## Objetivo do Playbook
+## 🎯 Objetivo
 
 Este playbook realiza as seguintes ações:
 
@@ -13,7 +13,7 @@ Este playbook realiza as seguintes ações:
 3.  Executa o comando `fstrim` em todos os discos.
 4.  Habilita e verifica o status do serviço `fstrim.timer`.
 
-## Estrutura do Playbook
+## 📜 Estrutura do Playbook
 
 > Obs.: Remover o "\\" do YAML entre os cochetes {\\{ e }\\} das variáveis.
 

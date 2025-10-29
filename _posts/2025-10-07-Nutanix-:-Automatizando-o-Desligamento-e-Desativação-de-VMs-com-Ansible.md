@@ -12,7 +12,7 @@ Desligar uma VM de forma segura e registrar sua desativação por meio de uma an
 
 ***
 
-### 📜 Estrutura do Playbook
+### 📜 Código do Playbook
 
 > Obs.: Remover o "\\" do YAML entre os cochetes {\\{ e }\\} das variáveis.
 
