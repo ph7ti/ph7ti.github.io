@@ -26,7 +26,7 @@ Desligar uma VM de forma segura e registrar sua desativação por meio de uma an
   #Coletar Hostname da VM
     - name: Get VM Name
       shell: |
-        host_ip="{{ target }}"
+        host_ip="{\{ target }\}"
         if [ $(echo $host_ip | grep -Eo '^(([1-9]?[0-9]|1[0-9][0-9]|2([0-4][0-9]|5[0-5]))\.){3}([1-9]?[0-9]|1[0-9][0-9]|2([0-4][0-9]|5[0-5]))$') != 1 ] ; then
           get_vms=$(/usr/local/nutanix/bin/acli vm.list | tail -n +2 | awk -F ' ' '{print $1"\n"}' | grep -v 'NTNX\|ntnx' | sed 's/$/\n/g')
           for vm in $get_vms ; do
@@ -42,24 +42,24 @@ Desligar uma VM de forma segura e registrar sua desativação por meio de uma an
       when: target|regex_search('^\\d{1,3}(\\.\\d{1,3}){3}$')
 
     - debug:
-        msg: '{{ output_vm_name.stdout_lines }}'
+        msg: '{\{ output_vm_name.stdout_lines }\}'
       when: target|regex_search('^\\d{1,3}(\\.\\d{1,3}){3}$')
 
   #- Registrar variáveis
 
     - name: Register variable - Host - If initial param is "HOSTNAME"
       set_fact:
-          string_vm: "{{ target }}"
+          string_vm: "{\{ target }\}"
       when: target|regex_search('^[a-zA-Z]+.*')
 
     - name: Register variable - Host - If initial param is "IP"
       set_fact:
-          string_vm: "{{ output_vm_name.stdout | from_yaml }}"
+          string_vm: "{\{ output_vm_name.stdout | from_yaml }\}"
       when: target|regex_search('^\\d{1,3}(\\.\\d{1,3}){3}$')
 
     - name: Get VM ansible adjustment
       shell: |
-          echo {{ string_vm }} | sed 's/-/_/g' | tr -d " "
+          echo {\{ string_vm }\} | sed 's/-/_/g' | tr -d " "
       ignore_errors: false
       register: output_hostname
 
@@ -67,22 +67,22 @@ Desligar uma VM de forma segura e registrar sua desativação por meio de uma an
     - name: Run Scrip - Update VM description
       shell: |
         echo "Realizando alteração:"
-        /usr/local/nutanix/bin/acli vm.update {{ string_vm }} annotation="{{ new_description }}"
+        /usr/local/nutanix/bin/acli vm.update {\{ string_vm }\} annotation="{\{ new_description }\}"
       register: output
 
   #- Retornar os dados na tela
     - debug:
-        msg: "{{ output.stdout_lines }}"
+        msg: "{\{ output.stdout_lines }\}"
 
   #- Desligar a VM
     - name: Shutdown VM
       shell: |
         echo "Shutting down..."
-        /usr/local/nutanix/bin/acli vm.guest_shutdown {{ string_vm }}
+        /usr/local/nutanix/bin/acli vm.guest_shutdown {\{ string_vm }\}
       register: shutdown_output
     
     - debug:
-        msg: "{{ shutdown_output.stdout_lines }}"
+        msg: "{\{ shutdown_output.stdout_lines }\}"
 
   #- Aguardar o desligamento da VM
     - name: Waiting VM poweroff
@@ -90,7 +90,7 @@ Desligar uma VM de forma segura e registrar sua desativação por meio de uma an
         state="kOn"
         while [ $state != "kOff" ]
         do
-          state=$(/usr/local/nutanix/bin/acli vm.get {{ string_vm }} | grep "state:" | awk -F '"' '{print $2}' | tr -d " " )
+          state=$(/usr/local/nutanix/bin/acli vm.get {\{ string_vm }\} | grep "state:" | awk -F '"' '{print $2}' | tr -d " " )
           sleep 3 ;
         done
       async: 120
@@ -119,13 +119,13 @@ Se o `target` for um IP, o script percorre as VMs do cluster e identifica aquela
 ```yaml
 - name: Register variable - Host - If initial param is "HOSTNAME"
   set_fact:
-      string_vm: "{{ target }}"
+      string_vm: "{\{ target }\}"
 ```
 
 ```yaml
 - name: Register variable - Host - If initial param is "IP"
   set_fact:
-      string_vm: "{{ output_vm_name.stdout | from_yaml }}"
+      string_vm: "{\{ output_vm_name.stdout | from_yaml }\}"
 ```
 
 **Explicação:**  
@@ -138,7 +138,7 @@ Define a variável `string_vm` com o nome da VM, seja ele informado diretamente 
 ```yaml
 - name: Get VM ansible adjustment
   shell: |
-      echo {{ string_vm }} | sed 's/-/_/g' | tr -d " "
+      echo {\{ string_vm }\} | sed 's/-/_/g' | tr -d " "
 ```
 
 **Explicação:**  
@@ -151,7 +151,7 @@ Realiza ajustes no nome da VM para evitar problemas com caracteres especiais em 
 ```yaml
 - name: Run Scrip - Update VM description
   shell: |
-    /usr/local/nutanix/bin/acli vm.update {{ string_vm }} annotation="{{ new_description }}"
+    /usr/local/nutanix/bin/acli vm.update {\{ string_vm }\} annotation="{\{ new_description }\}"
 ```
 
 **Explicação:**  
@@ -164,7 +164,7 @@ Adiciona uma anotação personalizada à VM, como "VM Disabled", podendo incluir
 ```yaml
 - name: Shutdown VM
   shell: |
-    /usr/local/nutanix/bin/acli vm.guest_shutdown {{ string_vm }}
+    /usr/local/nutanix/bin/acli vm.guest_shutdown {\{ string_vm }\}
 ```
 
 **Explicação:**  
