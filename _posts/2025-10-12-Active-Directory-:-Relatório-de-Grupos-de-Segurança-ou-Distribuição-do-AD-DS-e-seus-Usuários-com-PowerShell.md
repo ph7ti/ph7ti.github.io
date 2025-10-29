@@ -139,8 +139,6 @@ Para cada grupo:
 *   Exibe informações básicas do grupo.
 *   Coleta e exibe os usuários pertencentes ao grupo, incluindo nome, login e DN.
 
-⚠️ **Observação importante:** O uso de `$Grupo[0].name` pode causar problemas, pois `$Grupo` já é um objeto individual dentro do `foreach`. O correto seria usar `$Grupo.name`.
-
 ***
 
 ### 8. Finalização do relatório
