@@ -10,6 +10,8 @@ O playbook tem como objetivo coletar dados como IP, sistema operacional, versão
 
 ## Estrutura do Playbook
 
+> Obs.: Remover o "\\" do YAML entre os cochetes {\\{ e }\\} das variáveis.
+
 ```yaml
 ---
 - name: Generate a CSV file of server informations

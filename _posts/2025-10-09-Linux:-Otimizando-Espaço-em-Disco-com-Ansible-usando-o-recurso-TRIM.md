@@ -15,6 +15,8 @@ Este playbook realiza as seguintes ações:
 
 ## Estrutura do Playbook
 
+> Obs.: Remover o "\\" do YAML entre os cochetes {\\{ e }\\} das variáveis.
+
 ```yaml
 - name: Trim DISK
   hosts: all

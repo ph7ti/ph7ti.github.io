@@ -12,6 +12,8 @@ O playbook tem como objetivo identificar uma VM (por nome ou IP) e aumentar sua 
 
 ### Estrutura do Playbook
 
+> Obs.: Remover o "\\" do YAML entre os cochetes {\\{ e }\\} das variáveis.
+
 ```yaml
 - name: Upgrade Memory
   hosts: all

@@ -14,6 +14,8 @@ Permitir que o operador aumente a memória de uma VM específica (identificada p
 
 ## 📜 Estrutura do Playbook
 
+> Obs.: Remover o "\\" do YAML entre os cochetes {\\{ e }\\} das variáveis.
+
 ```yaml
 - name: Upgrade Memory (v2)
   hosts: all

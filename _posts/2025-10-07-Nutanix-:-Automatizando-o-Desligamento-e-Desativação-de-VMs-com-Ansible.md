@@ -14,7 +14,7 @@ Desligar uma VM de forma segura e registrar sua desativação por meio de uma an
 
 ### 📜 Estrutura do Playbook
 
-> Obs.: Remover o "\\" do YAML entre os cochetes ({\\{ e }\\}). O Markdown não aceita "{{" e "}}"
+> Obs.: Remover o "\\" do YAML entre os cochetes {\\{ e }\\} das variáveis.
 
 ```yaml
 - name: Guest Shutdown and Disable VM

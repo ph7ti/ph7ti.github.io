@@ -18,6 +18,8 @@ Permitir o aumento de vCPUs em uma VM Nutanix de forma automatizada, utilizando:
 
 ### 📄 Código do Playbook
 
+> Obs.: Remover o "\\" do YAML entre os cochetes {\\{ e }\\} das variáveis.
+
 ```yaml
 - name: Upgrade vCPU
   hosts: all

@@ -10,6 +10,8 @@ Listar todos os snapshots presentes no cluster Nutanix e exibir suas informaçõ
 
 ### Código Ansible
 
+> Obs.: Remover o "\\" do YAML entre os cochetes {\\{ e }\\} das variáveis.
+
 ```yaml
 - name: List Snapshots
   hosts: all

@@ -10,6 +10,8 @@ Criar snapshots de máquinas virtuais (VMs) em um ambiente Nutanix, utilizando A
 
 ### Estrutura do Playbook
 
+> Obs.: Remover o "\\" do YAML entre os cochetes {\\{ e }\\} das variáveis.
+
 ```yaml
 - name: Create Snapshots
   hosts: all
