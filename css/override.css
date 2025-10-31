@@ -8,7 +8,11 @@ hr {
   margin-bottom: 20px;
 }
 
-.site-title .post-meta {
+ .post-meta {
+  color: #dddad6;
+}
+
+.site-title {
   color: #dddad6;
 }
 
