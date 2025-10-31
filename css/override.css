@@ -19,6 +19,12 @@ a {
 a:visited {
   color: #a885fe;
 }
+
+a:hover {
+    color: #dddad6;
+    text-decoration: underline;
+}
+
 /* Post navigation links */
 .post_navi {
   display: flex;
