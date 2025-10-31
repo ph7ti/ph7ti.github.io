@@ -1,6 +1,6 @@
 body {
-    color: #dddad6;
-    background-color: #191b1c;
+  color: #dddad6;
+  background-color: #191b1c;
 }
 
 hr {
@@ -8,6 +8,9 @@ hr {
   margin-bottom: 20px;
 }
 
+.site-title {
+  color: #dddad6;
+}
 /* Post navigation links */
 .post_navi {
   display: flex;
