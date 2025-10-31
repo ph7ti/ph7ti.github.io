@@ -16,7 +16,7 @@ Permitir o aumento de vCPUs em uma VM Nutanix de forma automatizada, utilizando:
 
 ***
 
-### 📄 Código do Playbook
+### 📜 Código do Playbook
 
 > Obs.: Remover o "\\" do YAML entre os cochetes {\\{ e }\\} das variáveis.
 
