@@ -12,7 +12,7 @@ hr {
   color: #dddad6;
 }
 
-.site-title {
+div .wrapper {
   color: #dddad6;
 }
 
@@ -37,6 +37,10 @@ a:hover {
 .post_navi-label {
   font-size: 0.8em;
   opacity: 0.5;
+}
+
+.footer-col-3 {
+  color: #dddad6;
 }
 
 .post_navi .post_navi-item {
