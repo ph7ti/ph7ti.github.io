@@ -1,5 +1,7 @@
 ## Nutanix: Automatizando a Remoção de Snapshots com Ansible por Substring
 
+![alt text](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Nutanix-Ansible.png?raw=true)
+
 Snapshots são recursos valiosos para proteção e recuperação de dados, em ações rápidas nas VMs, mas podem consumir espaço significativo se não forem gerenciados adequadamente. A falta de sanitização de snapshots muitas vezes gera alertas de limite de armazenamento "topando" o threshold.
 
 Neste artigo, vamos explorar um **playbook Ansible** que automatiza a **remoção de snapshots** em um ambiente **Nutanix**, com base em uma substring no nome do snapshot.

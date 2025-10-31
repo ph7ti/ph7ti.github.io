@@ -1,5 +1,7 @@
 # Nutanix: Automatizando o Aumento de Memória em VMs com Ansible (v2)
 
+![alt text](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Nutanix-Ansible.png?raw=true)
+
 Observei no meu post anterior que seria interessante que pudessemos ter a opção de definir exatamente quanto de memória será adicionada na VM, o que não era possível no outro playbook (que tinha como finalidade uma expansão de apenas 10% de memória).
 
 Este playbook Ansible foi criado para facilitar o processo de **aumento de memória** em VMs Nutanix, de forma segura, automatizada e parametrizável.
