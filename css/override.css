@@ -41,7 +41,7 @@ a:hover {
     text-decoration: underline;
 }
 
-a .page-link {
+nav .trigger a {
   color: #dddad6;
 }
 
