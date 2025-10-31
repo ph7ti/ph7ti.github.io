@@ -41,6 +41,10 @@ a:hover {
     text-decoration: underline;
 }
 
+a .page-link {
+  color: #dddad6;
+}
+
 /* Post navigation links */
 .post_navi {
   display: flex;
