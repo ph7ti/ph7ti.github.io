@@ -12,8 +12,12 @@ hr {
   color: #dddad6;
 }
 
-.post-link {
-  color: #3292ff;
+a {
+  color: #70b4f3;
+}
+
+a:visited {
+  color: #a885fe;
 }
 /* Post navigation links */
 .post_navi {
