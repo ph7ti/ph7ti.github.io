@@ -8,11 +8,15 @@ hr {
   margin-bottom: 20px;
 }
 
- .post-meta {
+.post-meta {
   color: #dddad6;
 }
 
 div .wrapper {
+  color: #dddad6;
+}
+
+a .site-title {
   color: #dddad6;
 }
 
