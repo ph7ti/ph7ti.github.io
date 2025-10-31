@@ -24,7 +24,7 @@ div .wrapper {
   color: #dddad6;
 }
 
-a .site-title {
+.site-title, .site-title:visited {
   color: #dddad6;
 }
 
