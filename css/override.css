@@ -11,6 +11,10 @@ hr {
 .site-title .post-meta {
   color: #dddad6;
 }
+
+.post-link {
+  color: #3292ff;
+}
 /* Post navigation links */
 .post_navi {
   display: flex;
