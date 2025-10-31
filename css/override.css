@@ -8,6 +8,14 @@ hr {
   margin-bottom: 20px;
 }
 
+pre, code {
+    border-top-color: #363b3d;
+    border-right-color: #363b3d;
+    border-bottom-color: #363b3d;
+    border-left-color: #363b3d;
+    background-color: #1d1f20;
+}
+
 .post-meta {
   color: #dddad6;
 }
