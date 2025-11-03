@@ -1,4 +1,4 @@
-# 🧩 Modelo YAML Inicial para Playbooks Ansible no Nutanix
+# Modelo YAML Inicial para Playbooks Ansible no Nutanix
 
 ![alt text](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Nutanix-Ansible.png?raw=true)
 
