@@ -2,8 +2,9 @@
 
 ![alt text](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Powershell-Grupos-Distribuicao-365.png?raw=true)
 
-Você já se viu copiando e colando usuários manualmente em grupos de distribuição? 😩  
-Se a resposta for sim, este post é pra você!  
+Você já se viu copiando e colando usuários manualmente em grupos de distribuição do Office 365? 😩  
+Se a resposta for sim, este post é pra você!
+No post anterior utilizamos um script para inserir apenas um usuário em um grupo (1:1), este script adiciona vários usuários a um grupo (1:N)
 Vamos mostrar como automatizar esse processo com um script simples em PowerShell, ideal para quem administra ambientes com Exchange Online e precisa ganhar tempo (e sanidade 😅).
 
 ## 💻 Código Completo
