@@ -1,71 +1,67 @@
-# Automatizando a Inclusão de Usuários em Grupos de Distribuição no Exchange 365
+# Powershell: Automatizando a inclusão de usuários em grupos de distribuição no Exchange 365
 
 ![alt text](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Powershell-Grupos-Distribuicao-365.png?raw=true)
 
-Você já se viu copiando e colando usuários manualmente em grupos de distribuição do Office 365? 😩  
-Se a resposta for sim, este post é pra você!
-No post anterior utilizamos um script para inserir apenas um usuário em um grupo (1:1), este script adiciona vários usuários a um grupo (1:N)
-Vamos mostrar como automatizar esse processo com um script simples em PowerShell, ideal para quem administra ambientes com Exchange Online e precisa ganhar tempo (e sanidade 😅).
 
-## 💻 Código Completo
+Você já se pegou adicionando manualmente usuários a grupos de distribuição no Exchange Online, um por um? Se sim, sabe o quanto isso pode ser repetitivo e propenso a erros. Que tal automatizar esse processo com um script simples em PowerShell?
+
+Neste post, vou te mostrar como criar um script que adiciona um colaborador a um grupo de distribuição no Exchange 365 de forma rápida e segura. Ideal para quem trabalha com infraestrutura e precisa otimizar tarefas do dia a dia!
+
+***
+
+## 💻 Script completo
 
 ```powershell
-$toGroup = (Read-Host "Digite o Nome do Grupo")
+param ($Email, $Grupo)
 $UserPath = "C:\Automation\Add Bulk Users to Distribution Group"
-$users_file = "$UserPath\users.csv"
 $cred = "$UserPath\Cred.xml"
 $cred = Import-CliXml -Path $cred
 Import-Module ExchangeOnlineManagement
 Connect-ExchangeOnline -Credential $cred -ShowBanner:$false
-Import-CSV $users_file | foreach {  
- $UPN=$_.UPN 
- Write-Progress -Activity "Adding $UPN to group $toGroup " 
- Add-DistributionGroupMember –Identity $toGroup -Member $UPN  
- If($?)  
- {  
- Write-Host $UPN Successfully added -ForegroundColor Green 
- }  
- Else  
- {  
- Write-Host $UPN - Error occurred –ForegroundColor Red  
- } 
+Add-DistributionGroupMember –Identity $Grupo -Member $Email  
+If($?)  
+{  
+Write-Host $Email Successfully added -ForegroundColor Green 
+}  
+Else  
+{  
+Write-Host $Email - Error occurred –ForegroundColor Red  
 }
 Disconnect-ExchangeOnline -Confirm:$false -InformationAction Ignore -ErrorAction SilentlyContinue
 ```
 
 ***
 
-## 🧩 Explicação Passo a Passo
+## 🧩 Explicação passo a passo
 
-### 1. Recebendo o nome do grupo
+### 1. Parâmetros de entrada
 
 ```powershell
-$toGroup = (Read-Host "Digite o Nome do Grupo")
+param ($Email, $Grupo)
 ```
 
-Aqui o script solicita ao usuário o nome do grupo de distribuição que será atualizado. Isso torna o script reutilizável para diferentes grupos.
+Aqui definimos dois parâmetros que serão passados ao script: o e-mail do colaborador a ser adicionado e o nome do grupo de distribuição.
 
 ***
 
-### 2. Definindo o caminho dos arquivos
+### 2. Caminho para credenciais
 
 ```powershell
 $UserPath = "C:\Automation\Add Bulk Users to Distribution Group"
-$users_file = "$UserPath\users.csv"
 $cred = "$UserPath\Cred.xml"
 ```
 
-Define o caminho onde estão armazenados os arquivos necessários: o CSV com os usuários e o XML com as credenciais.
+Define o caminho onde está armazenado o arquivo XML com as credenciais de acesso ao Exchange Online. Isso evita digitar a senha toda vez que o script for executado.
 
 ***
 
-### 3. Importando credenciais
+### 3. Importando as credenciais
 
 ```powershell
 $cred = Import-CliXml -Path $cred
 ```
 
-Importa as credenciais salvas previamente em um arquivo XML. Isso evita digitação manual e facilita a automação.
+Importa as credenciais salvas no arquivo XML para uso na autenticação.
 
 ***
 
@@ -75,7 +71,7 @@ Importa as credenciais salvas previamente em um arquivo XML. Isso evita digitaç
 Import-Module ExchangeOnlineManagement
 ```
 
-Carrega o módulo necessário para interagir com o Exchange Online via PowerShell. Ele precisa estar previamente instalado, não se esqueça disso!
+Carrega o módulo necessário para executar comandos no Exchange Online via PowerShell.
 
 ***
 
@@ -85,46 +81,49 @@ Carrega o módulo necessário para interagir com o Exchange Online via PowerShel
 Connect-ExchangeOnline -Credential $cred -ShowBanner:$false
 ```
 
-Estabelece a conexão com o Exchange Online usando as credenciais importadas.
+Estabelece a conexão com o Exchange Online usando as credenciais importadas. O parâmetro `-ShowBanner:$false` evita que o banner de boas-vindas seja exibido.
 
 ***
 
-### 6. Importando usuários e adicionando ao grupo
+### 6. Adicionando o usuário ao grupo
 
 ```powershell
-Import-CSV $users_file | foreach {  
- $UPN=$_.UPN 
- Write-Progress -Activity "Adding $UPN to group $toGroup " 
- Add-DistributionGroupMember –Identity $toGroup -Member $UPN  
- If($?)  
- {  
- Write-Host $UPN Successfully added -ForegroundColor Green 
- }  
- Else  
- {  
- Write-Host $UPN - Error occurred –ForegroundColor Red  
- } 
+Add-DistributionGroupMember –Identity $Grupo -Member $Email  
+```
+
+Este é o comando principal: adiciona o e-mail informado ao grupo de distribuição especificado.
+
+***
+
+### 7. Verificando sucesso ou erro
+
+```powershell
+If($?)  
+{  
+Write-Host $Email Successfully added -ForegroundColor Green 
+}  
+Else  
+{  
+Write-Host $Email - Error occurred –ForegroundColor Red  
 }
 ```
 
-Lê o arquivo CSV com os usuários (espera-se que tenha uma coluna chamada `UPN`) e adiciona cada um ao grupo especificado.  
-O uso de `Write-Progress` e `Write-Host` ajuda a acompanhar o andamento e identificar erros.
+Verifica se o comando anterior foi executado com sucesso. Se sim, exibe uma mensagem verde; se não, uma mensagem vermelha.
 
 ***
 
-### 7. Finalizando a conexão
+### 8. Desconectando do Exchange Online
 
 ```powershell
 Disconnect-ExchangeOnline -Confirm:$false -InformationAction Ignore -ErrorAction SilentlyContinue
 ```
 
-Desconecta do Exchange Online de forma silenciosa, garantindo que a sessão seja encerrada corretamente.
+Finaliza a sessão com o Exchange Online de forma silenciosa, sem pedir confirmação ou exibir mensagens.
 
 ***
 
-## ✅ Conclusão
+## 🚀 Conclusão
 
-Esse script é uma mão na roda para quem precisa gerenciar grupos de distribuição com agilidade e segurança.  
-Ideal para cenários de onboarding em massa, mudanças organizacionais ou simplesmente para evitar o trabalho manual repetitivo.
+Esse script é uma mão na roda para quem precisa gerenciar grupos de distribuição no Exchange 365 com agilidade e segurança. Automatizar tarefas como essa economiza tempo, evita erros manuais e garante mais eficiência na administração do ambiente.
 
-Adapte os caminhos e formatos conforme seu ambiente e aproveite o poder da automação no Exchange Online! 🚀
+Você pode adaptá-lo para incluir múltiplos usuários, ler de um CSV ou até integrá-lo em rotinas maiores de provisionamento. Teste, ajuste conforme sua realidade e compartilhe com a equipe!

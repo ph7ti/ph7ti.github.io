@@ -1,4 +1,4 @@
-# Automatizando a Inclusão de Usuários em Grupos de Distribuição no Exchange 365
+# Powershell: Automatizando a Inclusão de Usuários em Grupos de Distribuição no Exchange 365
 
 ![alt text](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Powershell-Grupos-Distribuicao-365.png?raw=true)
 
