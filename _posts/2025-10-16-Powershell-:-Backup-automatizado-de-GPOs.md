@@ -1,4 +1,6 @@
-# **Backup Automátizado de GPOs com PowerShell e Task Scheduler**
+# **Backup Automatizado de GPOs com PowerShell e Task Scheduler**
+
+![alt text](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Powershell-backup-GPOs.png?raw=true)
 
 ## **Introdução**
 
