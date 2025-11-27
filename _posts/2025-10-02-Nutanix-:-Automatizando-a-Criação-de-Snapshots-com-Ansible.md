@@ -1,6 +1,6 @@
 ## Nutanix: Automatizando a Criação de Snapshots com Ansible
 
-![alt text](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Nutanix-Ansible.png?raw=true)
+![Nutanix: Automatizando a Criação de Snapshots com Ansible](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Nutanix-Ansible.png?raw=true)
 
 A automação de tarefas rotineiras é essencial para garantir agilidade e consistência na administração de ambientes de infraestrutura. Em um cenário de manutenção planejada, é importante garantir que os snapshots estarão concluídos antes de iniciar as atividades.
 

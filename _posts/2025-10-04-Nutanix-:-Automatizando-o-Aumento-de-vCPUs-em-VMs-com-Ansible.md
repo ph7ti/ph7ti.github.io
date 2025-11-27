@@ -1,6 +1,6 @@
 ## Nutanix: Automatizando o Aumento de vCPUs em VMs com Ansible
 
-![alt text](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Nutanix-Ansible.png?raw=true)
+![Nutanix: Automatizando o Aumento de vCPUs em VMs com Ansible](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Nutanix-Ansible.png?raw=true)
 
 A gestão de recursos em ambientes virtualizados pode ser desafiadora, especialmente quando há necessidade de escalar rapidamente a capacidade de uma VM. Em ambientes críticos, se um (ou vários) sistema(s) para(m) por falta de recursos em horário de pico podemos lembrar da expressão popular: "barata-voa". Logo a possibilidade de automação de expansão vertical de recursos pode salvar sua pele.
 

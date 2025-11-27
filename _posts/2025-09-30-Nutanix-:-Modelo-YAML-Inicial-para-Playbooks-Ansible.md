@@ -1,6 +1,6 @@
 # Modelo YAML Inicial para Playbooks Ansible no Nutanix
 
-![alt text](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Nutanix-Ansible.png?raw=true)
+![Modelo YAML Inicial para Playbooks Ansible no Nutanix](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Nutanix-Ansible.png?raw=true)
 
 Você já se pegou pensando: *“Como estruturar meu inventário Ansible para começar a automatizar tarefas no Nutanix?”* Se sim, essa postagem é pra você!
 
