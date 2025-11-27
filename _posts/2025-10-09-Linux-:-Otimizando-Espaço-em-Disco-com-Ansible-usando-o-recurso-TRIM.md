@@ -1,6 +1,6 @@
 # Linux: Otimizando Espaço em Disco com Ansible usando o recurso TRIM
 
-![alt text](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Linux-TRIM-Ansible.png?raw=true)
+![Linux: Otimizando Espaço em Disco com Ansible usando o recurso TRIM](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Linux-TRIM-Ansible.png?raw=true)
 
 Manter o desempenho e a saúde dos discos em ambientes Linux é essencial, especialmente em máquinas virtuais ou SSDs. Uma das práticas recomendadas é o uso do comando `fstrim`, que informa ao sistema operacional quais blocos de dados não estão mais em uso e podem ser liberados pelo dispositivo de armazenamento. Recentemente tive que fazer uso desse recurso em VMs legadas (CentOS 7 e Ubuntu 18) em um ambiente Nutanix com SSDs.
 

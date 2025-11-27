@@ -1,6 +1,6 @@
 # Linux: Coletando Informações do SO com Ansible e Gerando Relatório CSV
 
-![alt text](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Linux-SO-Ansible-CSV.png?raw=true)
+![Linux: Coletando Informações do SO com Ansible e Gerando Relatório CSV](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Linux-SO-Ansible-CSV.png?raw=true)
 
 Imagine a seguinte situação: Você precisa fazer um assessment rápido de ambiente sem monitoramento ou qualquer software de asset management... E se eu mostrar que dá pra fazer isso apenas com  ~~um canivete suiço~~ o ansible?
 

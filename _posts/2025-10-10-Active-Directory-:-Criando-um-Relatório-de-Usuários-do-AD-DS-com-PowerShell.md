@@ -1,6 +1,6 @@
 # Active Directory: Criando um Relatório de Usuários do AD DS com PowerShell
 
-![alt text](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Relatorio-usuarios-AD-powershell.png?raw=true)
+![Active Directory: Criando um Relatório de Usuários do AD DS com PowerShell](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Relatorio-usuarios-AD-powershell.png?raw=true)
 
 Você já se perguntou quantos usuários estão no seu Active Directory? Ou quem nunca trocou a senha desde 2012? Pois é, o AD DS (Active Directory Domain Services) guarda muitos segredos — e com um simples script em PowerShell, você pode revelá-los todos em um relatório organizado e prontinho para análise!
 
