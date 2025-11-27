@@ -1,8 +1,6 @@
-Claro! Aqui está a postagem em formato Markdown com o código completo (sem comentários), uma introdução divertida, explicação detalhada de cada etapa e uma conclusão sobre a utilidade do script:
-
-***
-
 # Relatório de Grupos de Segurança ou Distribuição do AD DS e seus Usuários com PowerShell
+
+![alt text](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Relatório de Usuários em um Grupo do AD DS com PowerShell?raw=true)
 
 Você já se viu perdido tentando descobrir **quem está em qual grupo** no Active Directory? Seja para auditoria, controle de acesso ou só para matar a curiosidade, saber a composição dos grupos de segurança ou distribuição é essencial para manter a infraestrutura organizada.
 
