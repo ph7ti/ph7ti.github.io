@@ -1,6 +1,6 @@
 # Relatório de Grupos de Segurança ou Distribuição do AD DS e seus Usuários com PowerShell
 
-![alt text](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Relatório de Usuários em um Grupo do AD DS com PowerShell?raw=true)
+![alt text](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Relatorio-usuarios-grupos-AD-powershell.png?raw=true)
 
 Você já se viu perdido tentando descobrir **quem está em qual grupo** no Active Directory? Seja para auditoria, controle de acesso ou só para matar a curiosidade, saber a composição dos grupos de segurança ou distribuição é essencial para manter a infraestrutura organizada.
 

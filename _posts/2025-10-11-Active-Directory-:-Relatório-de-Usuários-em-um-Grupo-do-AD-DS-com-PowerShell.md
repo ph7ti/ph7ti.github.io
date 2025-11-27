@@ -1,5 +1,6 @@
 # Relatório de Usuários em um Grupo do AD DS com PowerShell
 
+![alt text](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Relatorio-usuarios-grupos-AD-powershell.png?raw=true)
 
 Você já precisou saber **quem está em determinado grupo do Active Directory**? Seja para auditoria, controle de acesso ou simples curiosidade, esse tipo de informação é essencial para manter a casa em ordem — ou melhor, o domínio!
 
