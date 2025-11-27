@@ -1,5 +1,7 @@
 # Relatório de Usuários em um Grupo do AD DS com PowerShell
 
+![alt text](https://github.com/ph7ti/ph7ti.github.io/blob/main/_posts/imgs/Relatorio-usuarios-AD-powershell.png?raw=true)
+
 Você já precisou saber **quem está em determinado grupo do Active Directory**? Seja para auditoria, controle de acesso ou simples curiosidade, esse tipo de informação é essencial para manter a casa em ordem — ou melhor, o domínio!
 
 Neste post, vamos mostrar como criar um relatório com os usuários ativos de um grupo específico do AD DS. E o melhor: com direito a CSV na área de trabalho e abertura automática no Notepad. Tudo isso com um script simples e direto ao ponto!
