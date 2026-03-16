@@ -173,5 +173,3 @@ Abre o arquivo `.log` no Bloco de Notas para visualização imediata.
 ## Conclusão
 
 Esse script é uma ferramenta poderosa para quem precisa **auditar grupos do AD DS**, seja para verificar membros de grupos de segurança ou distribuição. Ele automatiza a coleta de dados, organiza tudo em um relatório legível e ainda abre o resultado para você na hora. Ideal para administradores que querem agilidade e clareza na gestão de acessos!
-
-Se quiser, posso corrigir o pequeno detalhe no código e gerar um arquivo `.ps1` ou `.md` para você. Deseja que eu faça isso?
